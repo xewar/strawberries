@@ -1,5 +1,14 @@
-const PlantsList = () => {
-  return <div>dynamically rendered list of plants will go here</div>;
-};
+import PlantsList from "@/pages/plants/PlantsList";
+import plantData from "@/pages/plants/plantData";
 
-export default PlantsList;
+function PlantsLayout({ children }) {
+  const plants = plantData.wildflowers;
+  return (
+    <div>
+      <PlantsList plants={plants} />
+      {children}
+    </div>
+  );
+}
+
+export default PlantsLayout;
