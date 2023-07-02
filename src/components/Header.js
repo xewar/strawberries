@@ -28,7 +28,11 @@ const Header = () => {
           <Link href="">Publications</Link>
         </div>
         <div className="search flex justify-end gap-2">
-          <input className="focus:outline-none p-1 rounded-md"></input>
+          <input
+            className="focus:outline-none p-1 rounded-md"
+            type="search"
+            name="search"
+          />
           <FiSearch size="1.5em" />
         </div>
       </div>
