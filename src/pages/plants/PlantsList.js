@@ -3,20 +3,21 @@ import Image from "next/image";
 
 function PlantsList({ plants }) {
   return (
-    <div className="plantsContainer flex flex-wrap p-10">
+    <div className="">
       {plants.map((plant) => {
         return (
-          <div key={plant.id} className="w-1/3 p-6">
+          <div key={plant.id} className="p-6">
             <Image
               src={`/../public/images/plants/${plant.fileExt}.jpg`}
               width={1024}
               height={1024}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className=""
+              sizes=""
               alt={`Picture of ${plant.englishName}`}
               href=""
             />
-            <div className="plantId text-right pt-3 text-sky-400 mr-5">
-              <div className="font-medium text-sky-950 uppercase text-lg">
+            <div className="plantId text-right pt-3 mr-5">
+              <div className="font-medium uppercase text-lg">
                 {plant.englishName}
               </div>
               <div className="italic">{plant.latinName}</div>
