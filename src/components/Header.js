@@ -37,7 +37,9 @@ const Header = () => {
   return (
     <div className="header p-3 flex  justify-between md:flex-row md:justify-between">
       <div className="left text-center md:text-left">
-        <div className="title text-4xl ">wild strawberries</div>
+        <Link href="/" className="title text-4xl ">
+          wild strawberries
+        </Link>
         <div className="subtitle text-xl italic">a native plants store</div>
       </div>
       <div className="right flex flex-col justify-end gap-2">
@@ -71,9 +73,9 @@ const Header = () => {
           />
           {menuOpen && (
             <div className="menu flex md:flex flex-col uppercase text-right gap-1 text-lg">
-              <Link href="">Seeds</Link>
-              <Link href="">Events</Link>
-              <Link href="">Publications</Link>
+              <Link href="/about">About</Link>
+              <Link href="/seeds">Seeds</Link>
+              <Link href="/events">Events</Link>
             </div>
           )}
         </div>
