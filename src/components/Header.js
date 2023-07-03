@@ -3,47 +3,72 @@ import Link from "next/link";
 import { BsCart3 } from "react-icons/bs";
 import { FiSearch, FiMenu } from "react-icons/fi";
 import { LuFlower } from "react-icons/lu";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
+  //menuOpen displays and hides the menu links in mobile view
   const [menuOpen, setMenuOpen] = useState(false);
-  const [value, setValue] = useState(1);
+  const [loginLinksOpen, setLoginLinksOpen] = useState(true);
 
-  const handleClick = () => {
-    console.log("clicked");
-  };
+  //when the window size is above the mobile breakpoint, the menu options are automatically displayed
+  useEffect(() => {
+    const handleWindowResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(true);
+        setLoginLinksOpen(true);
+      } else {
+        setMenuOpen(false);
+        setLoginLinksOpen(false);
+      }
+    };
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleWindowResize);
+
+    // Call the handleWindowResize function on component mount
+    handleWindowResize();
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
   return (
-    <div className="header bg-emerald-600 p-3 flex  justify-between md:flex-row md:justify-between">
+    <div className="header p-3 flex  justify-between md:flex-row md:justify-between">
       <div className="left text-center md:text-left">
         <div className="title text-4xl ">wild strawberries</div>
         <div className="subtitle text-xl italic">a native plants store</div>
       </div>
-      <div className="right flex flex-col  gap-2">
-        <div className="loginMenu flex justify-end">
-          <LuFlower className="text-3xl md:hidden" />
-          <div class="rightTop hidden md:flex flex-col items-end md:text-sm md:flex md:justify-between md:flex-row md:gap-4">
-            <div className="login">
-              <Link href="">Log in</Link> or{" "}
-              <Link href="">Create an account</Link>
+      <div className="right flex flex-col justify-end gap-2">
+        <div className="loginMenu flex flex-col justify-end items-end">
+          <LuFlower
+            className="text-3xl items-end md:hidden"
+            onClick={() => {
+              setLoginLinksOpen((prevState) => !prevState);
+            }}
+          />
+          {loginLinksOpen && (
+            <div className="rightTop  flex flex-col text-right items-end  md:flex justify-between md:flex-row md:gap-4">
+              <div className="cart">
+                <Link href="" className="flex gap-2 items-center">
+                  <BsCart3 />
+                  Cart
+                </Link>
+              </div>
+              <div className="login ">
+                <Link href="">Log in</Link>
+              </div>
             </div>
-            <div className="cart">
-              <Link href="" className="flex gap-2 items-center">
-                <BsCart3 />
-                Cart
-              </Link>
-            </div>
-          </div>
+          )}
         </div>
         <div className="navMenu flex flex-col justify-end items-end">
-          <button
-            className="bg-teal-200 size-lg w-200 h-200"
+          <FiMenu
+            className="text-3xl pb-2 md:hidden"
             onClick={() => {
-              console.log("button clicked!");
               setMenuOpen((prevState) => !prevState);
             }}
-          >
-            <FiMenu className="text-3xl pb-2 md:hidden" />
-          </button>
+          />
           {menuOpen && (
             <div className="menu flex md:flex flex-col uppercase text-right gap-1 text-lg">
               <Link href="">Seeds</Link>
