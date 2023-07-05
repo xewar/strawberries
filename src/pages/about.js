@@ -57,8 +57,8 @@ const About = () => {
             Deepen my fluency with React
           </div>
           <div className="flex gap-4 items-center">
-            <GoNorthStar className="text-xs" /> Familiarize myself with Next.js
-            + Tailwind CSS
+            <GoNorthStar className="text-xs" />
+            Build a project with Next.js + Tailwind CSS
           </div>
           <div className="flex gap-4 items-center">
             <GoNorthStar className="text-xs" /> Implement user authentication
