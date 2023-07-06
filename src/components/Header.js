@@ -75,7 +75,7 @@ const Header = () => {
             <div className="menu flex md:flex flex-col uppercase text-right gap-1 text-lg">
               <Link href="/about">About</Link>
               <Link href="/seeds">Seeds</Link>
-              <Link href="/events">Events</Link>
+              <Link href="/learn">Learn</Link>
             </div>
           )}
         </div>
