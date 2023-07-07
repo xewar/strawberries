@@ -6,9 +6,9 @@ I'm designing and building a seed store focused on plants native to the Northeas
 **Learning goals:**
 
 - Deepen my fluency with React
-- Familiarize myself with Next.js + Tailwind CSS
-- Implement user authentication with Passport.js
+- Build a project with Next.js + Tailwind CSS
 - Learn to use Postgres + Prisma
+- Implement user authentication + a shopping cart
 - Design a visually polished fullstack app
   - Add custom search bars by flower color
   - Continue to work on good UI practices, accessibility, + responsive web design
