@@ -25,28 +25,34 @@ const About = () => {
       </div>
       <div className="right flex flex-1 flex-col p-2 gap-4">
         <div className="aboutTitle italic text-emerald-600 text-lg">
-          wild strawberries - a native seed store
+          wild strawberries - a native seed directory
         </div>
         <div>
           This is an example website inspired by the{" "}
+          <Link className="text-emerald-600" href="https://www.talk-lenape.org">
+            Lenape Talking Dictionary
+          </Link>
+          , a project of the Delaware Tribe, and by the work of the
           <Link
             className="text-emerald-600"
             href="https://shop.wildseedproject.net/"
           >
+            {" "}
             Wild Seed Project
           </Link>
           , a Maine-based nonprofit focused on restoring native plants to the
-          Maine landscape. All the photos and descriptions of plants are
-          courtesy of them.
+          Maine landscape. The Lenape translations are from the Lenape Talking
+          Dictionary, and all the photos and descriptions of plants are courtesy
+          of the Wild Seed Project.
         </div>
         <div>
-          You can purchase any of the seeds featured on this site find out more
-          about their work on their{" "}
+          You can purchase any of the seeds featured on this site at the Wild
+          Seed Project's{" "}
           <Link
             className="text-emerald-600"
             href="https://shop.wildseedproject.net/"
           >
-            website
+            shop
           </Link>
           .
         </div>
