@@ -1,5 +1,7 @@
-<img src="https://github.com/xewar/strawberries/blob/a2b8c60c5605487e49e8739dee229a09decc7d3e/public/strawberries.svg" width="100"  object-fit="cover"></a> **About this project:**
-I'm designing and building a plant store focused on plants native to the Northeast of the United States.
+<img src="https://github.com/xewar/projectThumbnails/blob/b004e5790cb3b41decd1c289417b242ebe2b73aa/wtehim.png">
+
+**About this project:**
+I'm designing and building a seed store focused on plants native to the Northeast of the United States. You can also use the site to learn the Lenape names for the plants.
 
 **Learning goals:**
 
