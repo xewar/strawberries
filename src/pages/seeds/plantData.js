@@ -1,26 +1,6 @@
 const plantData = {
   wildflowers: [
     {
-      englishName: "New England aster",
-      latinName: "Symphyotrichum novae-angliae",
-      fileExt: "new-england-aster",
-      family: "Asters",
-      price: "4.75",
-      description: `A fall-blooming meadow aster with bright purple or pink flowers and yellow centers. Dark green foliage can be cut back in mid-summer to control height. Flowers supply abundant nectar for late-season bees and butterflies. Foliage important for many species in their larval stages. Excellent garden and landscape plant with late season interest.`,
-      native: "Yes",
-      growingConditions: `Sun to part shade in medium to wet soil`,
-      height: `2-5\'`,
-      blooms: "In late fall",
-      naturalHabitat:
-        "Meadows, roadsides, and ditches with fertile, moist soils",
-      seedsPerPacket: "50-100",
-      germination: ["A"],
-      germNotes:
-        "These seeds do not need a winter or cold period to germinate - the rate of germination may be higher if the seeds are exposed to a period of cold, but it is not required. Sow outdoors in pots November through early April. A great species for beginner seed-sowers.",
-      pairs: "",
-      id: 0,
-    },
-    {
       englishName: "Northeastern beardtongue",
       latinName: "Penstemon hirsutus",
       fileExt: "northeastern-beardtongue",
@@ -80,6 +60,26 @@ const plantData = {
       id: 3,
     },
     {
+      englishName: "New England aster",
+      latinName: "Symphyotrichum novae-angliae",
+      fileExt: "new-england-aster",
+      family: "Asters",
+      price: "4.75",
+      description: `A fall-blooming meadow aster with bright purple or pink flowers and yellow centers. Dark green foliage can be cut back in mid-summer to control height. Flowers supply abundant nectar for late-season bees and butterflies. Foliage important for many species in their larval stages. Excellent garden and landscape plant with late season interest.`,
+      native: "Yes",
+      growingConditions: `Sun to part shade in medium to wet soil`,
+      height: `2-5\'`,
+      blooms: "In late fall",
+      naturalHabitat:
+        "Meadows, roadsides, and ditches with fertile, moist soils",
+      seedsPerPacket: "50-100",
+      germination: ["A"],
+      germNotes:
+        "These seeds do not need a winter or cold period to germinate - the rate of germination may be higher if the seeds are exposed to a period of cold, but it is not required. Sow outdoors in pots November through early April. A great species for beginner seed-sowers.",
+      pairs: "",
+      id: 0,
+    },
+    {
       englishName: "Cardinal flower",
       latinName: "Lobelia cardinalis",
       fileExt: "cardinal-flower",
@@ -117,6 +117,49 @@ const plantData = {
       germNotes: `These seeds do not need a winter or cold period to germinate. Sow outdoors in pots November through April. A great species for beginner seed-sowers.`,
       pairs: "Butterfly milkweed and smooth blue aster",
       id: 5,
+    },
+    {
+      lenapeName: "wisaòtaèk",
+      lenapeTalkingDict: "https://www.talk-lenape.org/detail?id=11278",
+      lenapeNameMeaning: "yellow flower",
+      englishName: "Canadian goldenrod",
+      latinName: "Solidago canadensis",
+      fileExt: " canadian-goldenrod",
+      family: "Asteraceae",
+      price: "4.75",
+      description:
+        "Provides vital sources of pollen and nectar for bees and other insects in the late summer and fall throughout North America. Canada goldenrod can be used for revegetation of disturbed areas, for mine spoil reclamation, and soil stabilization.",
+      native: "Yes.",
+      growingConditions: "Full sun",
+      height: `4-5'`,
+      blooms: "In late fall",
+      naturalHabitat: "",
+      seedsPerPacket: "50-100",
+      germination: ["B"],
+      germNotes:
+        "These seeds need a winter or cold period to germinate - a minimum of 60 days below 40°F in moist soil (or sand or vermiculite). Sow outdoors in pots November through February. A great species for beginner seed-sowers.",
+      id: 6,
+    },
+    {
+      lenapeName: "",
+      lenapeTalkingDict: "",
+      englishName: "",
+      latinName: "Solidago caesia",
+      fileExt: " blue-stem-goldenrod",
+      family: "Asteraceae",
+      price: "4.75",
+      description:
+        "A lovely goldenrod for shady gardens and landscapes. In October, delicate arching stems are covered with tiny yellow flower clusters that attract fall pollinators. A clump-forming species that is very well-behaved and deserving of a place in shady gardens. Deer-proof.",
+      native: "Yes.",
+      growingConditions: "Part sun to shade in dry to medium soil",
+      height: `18"`,
+      blooms: "In late fall",
+      naturalHabitat: "Dry deciduous woodlands and shady edges",
+      seedsPerPacket: "50-100",
+      germination: ["B"],
+      germNotes:
+        "These seeds need a winter or cold period to germinate - a minimum of 60 days below 40°F in moist soil (or sand or vermiculite). Sow outdoors in pots November through February. A great species for beginner seed-sowers.",
+      id: 7,
     },
   ],
 };
