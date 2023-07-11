@@ -1,14 +1,18 @@
 "use client";
 import Link from "next/link";
 import { BsCart3 } from "react-icons/bs";
-import { FiSearch, FiMenu } from "react-icons/fi";
+import { FiSearch, FiMenu, FiHeart } from "react-icons/fi";
 import { LuFlower } from "react-icons/lu";
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import Splotch from "./Splotch.js";
+import Splotch2 from "./Splotch2.js";
+import Splotch3 from "./Splotch3.js";
 
 const Header = () => {
   //menuOpen displays and hides the menu links in mobile view
   const [menuOpen, setMenuOpen] = useState(false);
-  const [loginLinksOpen, setLoginLinksOpen] = useState(true);
+  const [loginLinksOpen, setLoginLinksOpen] = useState(false);
 
   //when the window size is above the mobile breakpoint, the menu options are automatically displayed
   useEffect(() => {
@@ -35,36 +39,17 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="header p-3 flex  justify-between md:flex-row md:justify-between">
-      <div className="left text-center md:text-left">
-        <Link href="/" className="title text-4xl ">
-          wild strawberries
+    <div className="header pt-16 px-8 lg:px-16 flex justify-between md:flex-row md:justify-between">
+      <div className="left text-center md:text-left ">
+        <Link href="/" className="title font-bold flex pb-2  text-7xl ">
+          wtehim
         </Link>
-        <div className="subtitle text-xl italic">a native plants store</div>
-      </div>
-      <div className="right flex flex-col justify-end gap-2">
-        <div className="loginMenu flex flex-col justify-end items-end">
-          <LuFlower
-            className="text-3xl items-end md:hidden"
-            onClick={() => {
-              setLoginLinksOpen((prevState) => !prevState);
-            }}
-          />
-          {loginLinksOpen && (
-            <div className="rightTop  flex flex-col text-right items-end  md:flex justify-between md:flex-row md:gap-4">
-              <div className="cart">
-                <Link href="" className="flex gap-2 items-center">
-                  <BsCart3 />
-                  Cart
-                </Link>
-              </div>
-              <div className="login ">
-                <Link href="">Log in</Link>
-              </div>
-            </div>
-          )}
+        <div className="subtitle text-2xl pl-4 font-light">
+          a native seeds store
         </div>
-        <div className="navMenu flex flex-col justify-end items-end">
+      </div>
+      <div className="right flex flex-col justify-center md:justify-end gap-2">
+        <div className="navMenu flex flex-col justify-end items-end ">
           <FiMenu
             className="text-3xl pb-2 md:hidden"
             onClick={() => {
@@ -72,20 +57,46 @@ const Header = () => {
             }}
           />
           {menuOpen && (
-            <div className="menu flex md:flex flex-col uppercase text-right gap-1 text-lg">
-              <Link href="/about">About</Link>
-              <Link href="/seeds">Seeds</Link>
-              <Link href="/learn">Learn</Link>
+            <div className="menu flex md:flex flex-col font-light uppercase text-right gap-3 text-lg">
+              <div className="navContainer relative">
+                <Link
+                  className="p-1 pt-5 z-10 font-medium absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  href="/about"
+                >
+                  About
+                </Link>
+                <Image
+                  className="relative"
+                  src="/images/splotch.svg"
+                  height={100}
+                  width={120}
+                />
+              </div>
+              <div className="navContainer relative">
+                <Link
+                  className="p-1 pt-5 z-10 font-medium absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  href="/seeds"
+                >
+                  Seeds
+                </Link>
+                <Image
+                  className="relative  opacity-50"
+                  src="/images/splotch2.svg"
+                  height={100}
+                  width={120}
+                />
+              </div>
+              <div className="navContainer relative ">
+                <Splotch className="fill-[#fda4af]  hover:fill-[#fb7185] block" />
+                <Link
+                  className="p-1 pt-5 font-medium absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  href="/learn"
+                >
+                  Learn
+                </Link>
+              </div>
             </div>
           )}
-        </div>
-        <div className="search flex justify-end gap-2">
-          <input
-            className=" hidden focus:outline-none p-1 rounded-md"
-            type="search"
-            name="search"
-          />
-          <FiSearch size="1.5em" />
         </div>
       </div>
     </div>
