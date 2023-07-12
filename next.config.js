@@ -5,6 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
-module.exports = withSvgr({
-  nextConfig,
-});
+// module.exports = withSvgr(
+//   nextConfig,
+// );
+module.exports = nextConfig;
