@@ -8,11 +8,10 @@ const Toggle = ({ lenape, handleToggle }) => {
     // Toggle the language value based on the current state
     const newLanguage = language === "lenape" ? "english" : "lenape";
     setLanguage(newLanguage);
-    console.log(newLanguage);
   };
 
   return (
-    <div className="flex px-2 lg:px-8 py-8 md:py-0 md:pb-4">
+    <div className="flex px-2 md:px-4 py-8 md:py-16 md:pb-4">
       <label htmlFor="languageToggle" className={styles.toggleLeft}>
         Lenape
       </label>
