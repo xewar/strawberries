@@ -1,7 +1,9 @@
-<img src="https://github.com/xewar/projectThumbnails/blob/b004e5790cb3b41decd1c289417b242ebe2b73aa/wtehim.png">
+<img src="https://github.com/xewar/projectThumbnails/blob/e185a244db9e981110e2600c6ce8d4462e16dcd2/wtehim.png">
+
+This is a work in progress! I expect to complete it in July 2023. When it's done I'll update with a live link.
 
 **About this project:**
-I'm designing and building a seed store focused on plants native to the Northeast of the United States. You can also use the site to learn the Lenape names for the plants.
+Wtehim is the word for wild strawberries in Lenape, the language of the people who originally lived in my home of New York City. In this project I'm designing and building a seed store focused on plants native to the Northeast of the United States. You can also use the site to learn the Lenape names for the plants.
 
 **Learning goals:**
 
