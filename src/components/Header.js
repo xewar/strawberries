@@ -5,9 +5,9 @@ import { FiSearch, FiMenu, FiHeart } from "react-icons/fi";
 import { LuFlower } from "react-icons/lu";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Splotch from "./Splotch.js";
-import Splotch2 from "./Splotch2.js";
-import Splotch3 from "./Splotch3.js";
+import Splotch from "./Splotches/Splotch.js";
+import Splotch2 from "./Splotches/Splotch2.js";
+import Splotch3 from "./Splotches/Splotch3.js";
 
 const Header = () => {
   //menuOpen displays and hides the menu links in mobile view
@@ -57,39 +57,29 @@ const Header = () => {
             }}
           />
           {menuOpen && (
-            <div className="menu flex md:flex flex-col font-light uppercase text-right gap-3 text-lg">
+            <div className="menu flex md:flex flex-col  font-semibold  uppercase text-right gap-3 text-md">
               <div className="navContainer relative">
                 <Link
-                  className="p-1 pt-5 z-10 font-medium absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  className="p-1 pt-5 z-10  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-90"
                   href="/about"
                 >
                   About
                 </Link>
-                <Image
-                  className="relative"
-                  src="/images/splotch.svg"
-                  height={100}
-                  width={120}
-                />
+                <Splotch className="fill-pink-200 hover:fill-pink-400 splotch block opacity-80 w-30 h-16" />
               </div>
               <div className="navContainer relative">
                 <Link
-                  className="p-1 pt-5 z-10 font-medium absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  className="p-1 pt-5 z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-90"
                   href="/seeds"
                 >
                   Seeds
                 </Link>
-                <Image
-                  className="relative  opacity-50"
-                  src="/images/splotch2.svg"
-                  height={100}
-                  width={120}
-                />
+                <Splotch2 className="fill-pink-300 hover:fill-pink-500 splotch opacity-80 block" />
               </div>
               <div className="navContainer relative ">
-                <Splotch className="fill-[#fda4af]  hover:fill-[#fb7185] block" />
+                <Splotch3 className="fill-rose-300 hover:fill-rose-400 splotch block opacity-80" />
                 <Link
-                  className="p-1 pt-5 font-medium absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  className="p-1 pt-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                   href="/learn"
                 >
                   Learn
