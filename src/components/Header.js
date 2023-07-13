@@ -13,6 +13,34 @@ const Header = () => {
   //menuOpen displays and hides the menu links in mobile view
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginLinksOpen, setLoginLinksOpen] = useState(false);
+  const [hoveredButton, setHoveredButton] = useState(null);
+
+  //changing color of nav menu on hover. the :hover state wasn't working properly because of the text in front of it
+  useEffect(() => {
+    const handleMouseEnter = (event) => {
+      const buttonId = event.target.id;
+      console.log(buttonId, event.target);
+      setHoveredButton(buttonId);
+    };
+
+    const handleMouseLeave = () => {
+      setHoveredButton(null);
+    };
+
+    const navButtons = document.querySelectorAll(".navContainer");
+
+    navButtons.forEach((button) => {
+      button.addEventListener("mouseenter", handleMouseEnter);
+      button.addEventListener("mouseleave", handleMouseLeave);
+    });
+
+    return () => {
+      navButtons.forEach((button) => {
+        button.removeEventListener("mouseenter", handleMouseEnter);
+        button.removeEventListener("mouseleave", handleMouseLeave);
+      });
+    };
+  }, []);
 
   //when the window size is above the mobile breakpoint, the menu options are automatically displayed
   useEffect(() => {
@@ -40,13 +68,17 @@ const Header = () => {
 
   return (
     <div className="header pt-16 px-8 lg:px-16 flex justify-between md:flex-row md:justify-between">
-      <div className="left text-center md:text-left ">
-        <Link href="/" className="title font-bold flex pb-2  text-7xl ">
-          wtehim
+      <div className="left relative text-center md:text-left ">
+        <Link
+          href="/"
+          className="title  absolute font-bold flex flex-col gap-2  text-7xl "
+        >
+          <div> wtehim</div>
+          <div className="subtitle text-2xl pl-4 font-light">
+            a native seeds store
+          </div>
         </Link>
-        <div className="subtitle text-2xl pl-4 font-light">
-          a native seeds store
-        </div>
+        <Splotch2 className="z-10 w-full fill-transparent hover:fill-pink-400 splotch opacity-30 block"></Splotch2>
       </div>
       <div className="right flex flex-col justify-center md:justify-end gap-2">
         <div className="navMenu flex flex-col justify-end items-end ">
@@ -58,28 +90,40 @@ const Header = () => {
           />
           {menuOpen && (
             <div className="menu flex md:flex flex-col  font-semibold  uppercase text-right gap-3 text-md">
-              <div className="navContainer relative">
+              <div id="about" className="navContainer splotch relative">
                 <Link
-                  className="p-1 pt-5 z-10  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-90"
+                  className="z-20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-80"
                   href="/about"
                 >
                   About
                 </Link>
-                <Splotch className="fill-pink-200 hover:fill-pink-400 splotch block opacity-80 w-30 h-16" />
+                <Splotch
+                  className={`fill-pink-200 splotch block opacity-80 w-30 h-16  ${
+                    hoveredButton === "about" ? "hovered" : ""
+                  }`}
+                />
               </div>
-              <div className="navContainer relative">
+              <div id="seeds" className="navContainer relative">
                 <Link
-                  className="p-1 pt-5 z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-90"
+                  className="z-20 pt-5  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-80"
                   href="/seeds"
                 >
                   Seeds
                 </Link>
-                <Splotch2 className="fill-pink-300 hover:fill-pink-500 splotch opacity-80 block" />
+                <Splotch2
+                  className={`fill-pink-300 opacity-80 block ${
+                    hoveredButton === "seeds" ? "hovered" : ""
+                  }`}
+                />{" "}
               </div>
-              <div className="navContainer relative ">
-                <Splotch3 className="fill-rose-300 hover:fill-rose-400 splotch block opacity-80" />
+              <div id="learn" className="navContainer relative ">
+                <Splotch3
+                  className={`fill-rose-300 opacity-80 block ${
+                    hoveredButton === "learn" ? "hovered" : ""
+                  }`}
+                />
                 <Link
-                  className="p-1 pt-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                  className="pt-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                   href="/learn"
                 >
                   Learn
