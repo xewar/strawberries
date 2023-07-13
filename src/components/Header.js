@@ -15,32 +15,13 @@ const Header = () => {
   const [loginLinksOpen, setLoginLinksOpen] = useState(false);
   const [hoveredButton, setHoveredButton] = useState(null);
 
-  //changing color of nav menu on hover. the :hover state wasn't working properly because of the text in front of it
-  useEffect(() => {
-    const handleMouseEnter = (event) => {
-      const buttonId = event.target.id;
-      console.log(buttonId, event.target);
-      setHoveredButton(buttonId);
-    };
-
-    const handleMouseLeave = () => {
-      setHoveredButton(null);
-    };
-
-    const navButtons = document.querySelectorAll(".navContainer");
-
-    navButtons.forEach((button) => {
-      button.addEventListener("mouseenter", handleMouseEnter);
-      button.addEventListener("mouseleave", handleMouseLeave);
-    });
-
-    return () => {
-      navButtons.forEach((button) => {
-        button.removeEventListener("mouseenter", handleMouseEnter);
-        button.removeEventListener("mouseleave", handleMouseLeave);
-      });
-    };
-  }, []);
+  //a way to change the hover color of nav menu items. nb - the :hover state wasn't working properly because of the text in front of the svg
+  const handleMouseEnter = (buttonId) => {
+    setHoveredButton(buttonId);
+  };
+  const handleMouseLeave = () => {
+    setHoveredButton(null);
+  };
 
   //when the window size is above the mobile breakpoint, the menu options are automatically displayed
   useEffect(() => {
@@ -68,17 +49,26 @@ const Header = () => {
 
   return (
     <div className="header pt-16 px-8 lg:px-16 flex justify-between md:flex-row md:justify-between">
-      <div className="left relative text-center md:text-left ">
+      <div
+        id="left"
+        onMouseEnter={() => handleMouseEnter("left")}
+        onMouseLeave={handleMouseLeave}
+        className="left navContainer relative text-center ml-2 md:text-left "
+      >
         <Link
           href="/"
-          className="title  absolute font-bold flex flex-col gap-2  text-7xl "
+          className="z-20 title absolute font-bold flex flex-col gap-2  text-7xl"
         >
           <div> wtehim</div>
           <div className="subtitle text-2xl pl-4 font-light">
             a native seeds store
           </div>
         </Link>
-        <Splotch2 className="z-10 w-full fill-transparent hover:fill-pink-400 splotch opacity-30 block"></Splotch2>
+        <Splotch2
+          className={`w-full fill-transparent splotch opacity-90 -pt-80 -mt-10 -ml-3 block  ${
+            hoveredButton === "left" ? "hovered" : ""
+          }`}
+        />
       </div>
       <div className="right flex flex-col justify-center md:justify-end gap-2">
         <div className="navMenu flex flex-col justify-end items-end ">
@@ -90,7 +80,12 @@ const Header = () => {
           />
           {menuOpen && (
             <div className="menu flex md:flex flex-col  font-semibold  uppercase text-right gap-3 text-md">
-              <div id="about" className="navContainer splotch relative">
+              <div
+                id="about"
+                className="navContainer splotch relative"
+                onMouseEnter={() => handleMouseEnter("about")}
+                onMouseLeave={handleMouseLeave}
+              >
                 <Link
                   className="z-20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-80"
                   href="/about"
@@ -103,7 +98,12 @@ const Header = () => {
                   }`}
                 />
               </div>
-              <div id="seeds" className="navContainer relative">
+              <div
+                id="seeds"
+                className="navContainer relative"
+                onMouseEnter={() => handleMouseEnter("seeds")}
+                onMouseLeave={handleMouseLeave}
+              >
                 <Link
                   className="z-20 pt-5  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-80"
                   href="/seeds"
@@ -111,12 +111,17 @@ const Header = () => {
                   Seeds
                 </Link>
                 <Splotch2
-                  className={`fill-pink-300 opacity-80 block ${
+                  className={`fill-pink-500 opacity-80 block ${
                     hoveredButton === "seeds" ? "hovered" : ""
                   }`}
                 />{" "}
               </div>
-              <div id="learn" className="navContainer relative ">
+              <div
+                id="learn"
+                className="navContainer relative "
+                onMouseEnter={() => handleMouseEnter("learn")}
+                onMouseLeave={handleMouseLeave}
+              >
                 <Splotch3
                   className={`fill-rose-300 opacity-80 block ${
                     hoveredButton === "learn" ? "hovered" : ""
