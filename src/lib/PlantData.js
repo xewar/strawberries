@@ -1,4 +1,4 @@
-const plantData = {
+const PlantData = {
   wildflowers: [
     {
       lenapeName: "pèkòn",
@@ -20,6 +20,9 @@ const plantData = {
       germNotes:
         "Sow these seeds immediately upon receipt, outdoors in pots from November through February. This seed has a double dormancy so look for germination the second spring. This species is challenging to grow, and a great species for more experienced seed-sowers.",
       pairs: "Blue lobelia and red baneberry",
+      lenapeDescription: "",
+      informant: "",
+      lenapeDescriptionSource: "",
       id: 2,
     },
 
@@ -44,6 +47,9 @@ const plantData = {
       germination: ["B"],
       germNotes:
         "These seeds need a winter or cold period to germinate - a minimum of 30 days below 40°F in moist soil (or sand or vermiculite). Sow outdoors in pots November through February. A great species for beginner seed-sowers.",
+      lenapeDescription: "",
+      informant: "",
+      lenapeDescriptionSource: "",
       id: 14,
     },
     {
@@ -66,6 +72,9 @@ const plantData = {
       germination: ["B"],
       germNotes:
         "These seeds need a winter or cold period to germinate - a minimum of 60 days below 40°F in moist soil (or sand or vermiculite). Sow outdoors in pots November through February. A great species for beginner seed-sowers.",
+      lenapeDescription: "",
+      informant: "",
+      lenapeDescriptionSource: "",
       id: 6,
     },
 
@@ -75,7 +84,7 @@ const plantData = {
       lenapeTalkingDict: "https://www.talk-lenape.org/detail?id=8913 ",
       englishName: "Elderberry",
       latinName: "Sambucus canadensis",
-      fileExt: "elderberry-2",
+      fileExt: "elderberry-4",
       family: "",
       price: "4.75",
       description:
@@ -91,6 +100,10 @@ const plantData = {
       seedsPerPacket: "50-100",
       germination: [""],
       germNotes: "",
+      lenapeDescription:
+        "Nora Thompson Dean recalled that her father made toy squirt guns out of elderberry stems for her and her brothers when they were children. Freddie Washington mentioned that elderberries were employed to make a dye used in coloring basket splints.",
+      informant: "Nora Thompson Dean and Freddie Washington",
+      lenapeDescriptionSource: "Delaware Ethnobotany",
       id: 13,
     },
 
@@ -100,7 +113,7 @@ const plantData = {
       lenapeTalkingDict: "https://www.talk-lenape.org/detail?id=11446",
       englishName: "Wild Strawberry",
       latinName: "Fragaria virginiana",
-      fileExt: "wild-strawberry-2",
+      fileExt: "wild-strawberry",
       family: "",
       price: "4.75",
       description:
@@ -116,9 +129,10 @@ const plantData = {
       germNotes:
         "The easiest method for sowing these seeds is to plant them outdoors in pots from November through mid-March. Please note: wild strawberry seeds must have two weeks below 40 degrees F to germinate. If you are sowing the seeds after mid-March (when daytime temperatures may be above 40*), sow seeds in a pot, wrap in a plastic bag, and place in a refrigerator for two weeks before placing outside. A great species for beginner seed-sowers.",
       id: 8,
-      traditionalUses:
+      lenapeDescription:
         "The fruit of this plant are used to improve the complexion. The leaves should be crushed and then applied as a face mask.",
-      source: "Nora Thompson Dean",
+      informant: "Nora Thompson Dean",
+      lenapeDescriptionSource: "Delaware Ethnobotany",
     },
     {
       lenapeName: "matapipalinko",
@@ -140,6 +154,9 @@ const plantData = {
       germination: ["B", "C"],
       germNotes: `These seeds require a cold period to germinate - a minimum of 60 days below 40°F in moist soil (or sand or vermiculite). Sow outdoors in pots, on the soil surface and leave uncovered, November through February. A great species for beginner seed-sowers.`,
       pairs: "Boneset and blue iris in sunny areas; ferns in shady areas",
+      lenapeDescription: `Cardinal flower was believed to be a love charm that would help the Delaware win the hand of a lover. It was kept and prayed over so would work its magic charm. The root of this plant is used as a philter or love charm. The root is first cleaned and then touched all over the body. Nora Thompson Dean commented, "Old ladies use it a love charm. They usually talk to it and offer tobacco to it in secret." All ages can use it as a love charm.`,
+      informant: "Nora Thompson Dean",
+      lenapeDescriptionSource: "Delaware Ethnobotany",
       id: 4,
     },
     {
@@ -167,7 +184,10 @@ const plantData = {
       germNotes:
         "These seeds do not need a winter or cold period to germinate. Sow in pots November through April. A great species for beginner seed-sowers.",
       id: 10,
-      traditionalUses: `The dried leaves of this plant are crushed and tied up into a small silk scarf which is then attached, usually in pairs, to the bandoliers of a "straight" War dancer so as to hang slightly below either shoulder in back. A similar "bundle" but involving only one bandolier, is sometimes worn by a peyotist.`,
+      lenapeDescription:
+        "The leaves are used as a headache cure. The leaves are crushed and placed in a small pan of cold water . The wet leaves are then placed in a rag and applied on the head as a compress. Note - There were two kinds used, but not Mentha. It should be Monarda.",
+      informant: "Nora Thompson Dean",
+      lenapeDescriptionSource: "Delaware Ethnobotany",
     },
 
     {
@@ -191,6 +211,9 @@ const plantData = {
       germination: ["A"],
       germNotes: `These seeds do not need a winter or cold period to germinate. Sow outdoors in pots November through April. A great species for beginner seed-sowers.`,
       pairs: "Butterfly milkweed and smooth blue aster",
+      lenapeDescription: "",
+      informant: "",
+      lenapeDescriptionSource: "",
       id: 5,
     },
     {
@@ -207,12 +230,16 @@ const plantData = {
       native: "Yes.",
       growingConditions: "Sun in medium soil",
       height: `2'`,
-      blooms: "New England aster and tall-white aster",
+      blooms: "In mid-summer",
+      pairs: "New England aster and tall-white aster",
       naturalHabitat: "Meadows, pastures, and roadsides",
       seedsPerPacket: "50-100",
       germination: ["B"],
       germNotes:
         "These seeds need a winter or cold period to germinate - a minimum of 30-60 days below 40°F in moist soil (or sand or vermiculite). Sow outdoors in pots November through February. A great species for beginner seed-sowers.",
+      lenapeDescription: `Milkweed is gathered in the spring when about one foot tall. At this height it is still tender. Freddie Washington explained that there are four kinds of milkweed, three of which are not fit to eat . The edible sor t blooms in June.`,
+      informant: "Freddie Washington",
+      lenapeDescriptionSource: "Delaware Ethnobotany",
       id: 12,
     },
     {
@@ -220,7 +247,7 @@ const plantData = {
       lenapeTalkingDict: "https://www.talklenape.org/detail?id=18404",
       englishName: "Yarrow",
       latinName: "Achillea millefolium",
-      fileExt: "yarrow",
+      fileExt: "yarrow2",
       family: "",
       price: "4.75",
       description: `Yarrow has flat-topped or dome-shaped clusters of small white flowers that bloom from April to October. An attractive, hardy perennial, yarrow can reach about 3 feet in height. Its aromatic, fine, feathery-cut leaves give the plant a soft, fern-like appearance. Yarrow attracts butterflies, bees and other insects, making it a nice addition to a pollinator garden. This species can become weedy, however, since it spreads readily and tolerates disturbance.
@@ -237,6 +264,9 @@ const plantData = {
       germNotes:
         "Plant in spring or early summer after the danger of frost has passed.",
       otherSource: "USDA, Clemson Home & Garden Information Center",
+      lenapeDescription: `Yarrow tea will stop excess menstrual flow. The roots of the plant are pounded with a stone, after which the macerated roots are boiled to produce the medicinal tea.`,
+      informant: "Nora Thompson Dean",
+      lenapeDescriptionSource: "Delaware Ethnobotany",
       id: 11,
     },
 
@@ -261,6 +291,9 @@ const plantData = {
       germination: ["B"],
       germNotes:
         "These seeds need a winter or cold period to germinate - a minimum of 60 days below 40°F in moist soil (or sand or vermiculite). Sow outdoors in pots November through February. A great species for beginner seed-sowers.",
+      lenapeDescription: "",
+      informant: "",
+      lenapeDescriptionSource: "",
       id: 15,
     },
     {
@@ -284,6 +317,9 @@ const plantData = {
       germNotes:
         "These seeds need a winter or cold period to germinate - a minimum of 60 days below 40°F in moist soil (or sand or vermiculite). Sow outdoors in pots November through February. A great species for beginner seed-sowers.",
       pairs: "",
+      lenapeDescription: "",
+      informant: "",
+      lenapeDescriptionSource: "",
       id: 1,
     },
     {
@@ -307,6 +343,9 @@ const plantData = {
       germNotes: `These seeds require a cold period to germinate - a minimum of 21 days below 40°F in moist soil (or sand or vermiculite). Sow outdoors in pots, on the soil surface and leave uncovered, November through February. This species is challenging to grow, and a great species for more experienced seed-sowers.
         *These seeds have been known to germinate without a cold period, best practice is to allow a minimum of 21 days of cold.`,
       pairs: "Jacob's-ladder and spotted crane's-bill",
+      lenapeDescription: "",
+      informant: "",
+      lenapeDescriptionSource: "",
       id: 3,
     },
     {
@@ -330,6 +369,9 @@ const plantData = {
       germNotes:
         "These seeds do not need a winter or cold period to germinate - the rate of germination may be higher if the seeds are exposed to a period of cold, but it is not required. Sow outdoors in pots November through early April. A great species for beginner seed-sowers.",
       pairs: "",
+      lenapeDescription: "",
+      informant: "",
+      lenapeDescriptionSource: "",
       id: 0,
     },
     {
@@ -353,6 +395,9 @@ const plantData = {
       germination: ["A"],
       germNotes:
         "These seeds do not need a winter or cold period to germinate. Sow in pots November through April. A great species for beginner seed-sowers.",
+      lenapeDescription: "",
+      informant: "",
+      lenapeDescriptionSource: "",
       id: 9,
     },
     {
@@ -375,6 +420,9 @@ const plantData = {
       germination: ["B"],
       germNotes:
         "These seeds need a winter or cold period to germinate - a minimum of 60 days below 40°F in moist soil (or sand or vermiculite). Sow outdoors in pots November through February. A great species for beginner seed-sowers.",
+      lenapeDescription: "",
+      informant: "",
+      lenapeDescriptionSource: "",
       id: 7,
     },
     // {
@@ -400,4 +448,4 @@ const plantData = {
   ],
 };
 
-export default plantData;
+export default PlantData;
