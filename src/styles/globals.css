@@ -15,7 +15,9 @@
   transform: scale(1.4);
   fill: #ff0;
 }
-
+#left > .hovered {
+  fill: #ff0;
+}
 /* .splotch {
   transition: all 0.2s ease-in-out;
 }
