@@ -17,7 +17,6 @@ const FeaturedPlant = () => {
           priority={true}
           alt="The purple and pink flowers of a New England Aster"
         ></Image>
-        <div className="noise"></div>
       </Link>
     </div>
   );
