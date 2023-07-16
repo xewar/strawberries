@@ -18,7 +18,7 @@ function IndividualPlantInfo() {
   const plant = findFlowerByFileExt(fileExt);
 
   return (
-    <div className="pageContent flex bg-[#ff0] ">
+    <div className="pageContent flex ">
       <div className="left w-1/2 ">
         <Link
           href="/seeds"
