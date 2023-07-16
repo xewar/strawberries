@@ -17,9 +17,10 @@ const Learn = () => {
         <div className="resource flex justify-end gap-8">
           <div className="resourceImage">
             <Image
-              src="/../public/images/lenape_dialects.png"
+              src="/images/lenape_dialects.png"
               width="1024"
               height="1024"
+              alt="map of Lenapehoking showing spread of different Lenape dialects"
             ></Image>
             <div className="imageCaption text-xs">
               A map of Lenapehoking. The dark green shows the original home of
@@ -29,7 +30,7 @@ const Learn = () => {
               </Link>
             </div>
           </div>
-          <div class="resourceText">
+          <div className="resourceText">
             <Link href="https://www.talk-lenape.org/" className="resourceTitle">
               The Lenape Talking Dictionary
             </Link>
@@ -50,9 +51,10 @@ const Learn = () => {
         <div className="resource flex justify-end w-full">
           <div className="resourceImage">
             <Image
-              src="/../public/images/lenape_dialects.png"
+              src="/images/lenape_dialects.png"
               width="1024"
               height="1024"
+              alt="map of Lenapehoking showing spread of different Lenape dialects"
             ></Image>
             <div className="imageCaption text-xs">
               A map of Lenapehoking. The dark green shows the original home of
@@ -62,7 +64,7 @@ const Learn = () => {
               </Link>
             </div>
           </div>
-          <div class="resourceText">
+          <div className="resourceText">
             <Link href="https://www.talk-lenape.org/" className="resourceTitle">
               The Lenape Talking Dictionary
             </Link>
@@ -83,9 +85,10 @@ const Learn = () => {
         <div className="resource flex justify-end w-1/3">
           <div className="resourceImage">
             <Image
-              src="/../public/images/lenape_dialects.png"
+              src="/images/lenape_dialects.png"
               width="1024"
               height="1024"
+              alt="map of Lenapehoking showing spread of different Lenape dialects"
             ></Image>
             <div className="imageCaption text-xs">
               A map of Lenapehoking. The dark green shows the original home of
@@ -95,7 +98,7 @@ const Learn = () => {
               </Link>
             </div>
           </div>
-          <div class="resourceText">
+          <div className="resourceText">
             <Link href="https://www.talk-lenape.org/" className="resourceTitle">
               The Lenape Talking Dictionary
             </Link>
@@ -151,6 +154,7 @@ const Learn = () => {
           </div>
         </div> */}
       </div>
+      <div className="z-50 noise fixed bg-opacity-30 top-0 h-full w-full pointer-events-none"></div>
     </div>
   );
 };

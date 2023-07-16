@@ -7,7 +7,7 @@ import { GoNorthStar } from "react-icons/go";
 const About = () => {
   return (
     <div className="md:flex gap-8 md:pr-8 pt-16 md:pt-12">
-      <div className="left pl-16 px-8 md:pr-0 md:max-w-lg lg:max-w-3xl">
+      <div className="left pl-16 px-8 md:pr-0 md:max-w-lg lg:max-w-xl">
         <Image
           className="image object-cover object-right-top md:h-3/4 md:max-w-full shadow-[-20px_20px_0_5px_#fdba74]  "
           alt="butterfly milkweed flowers"
@@ -26,9 +26,10 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="right  flex flex-1 flex-col px-16 py-12 lg:px-18 lg:max-w-xl md:py-4 md:px-4 gap-3">
+      <div className="right  flex flex-1 flex-col px-16 py-12 lg:px-18 lg:max-w-xl md:py-4 md:pr-16 gap-3">
         <div className="aboutTitle font-normal opacity-95 text-xl ">
-          "wtehim" is the word for wild strawberry in Lenape
+          <span className="italic">wtehim</span> is the word for wild strawberry
+          in Lenape
         </div>
 
         <div className="bodyText tracking-wider flex flex-col gap-4 ">
@@ -96,6 +97,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <div className="z-50 noise fixed bg-opacity-30 top-0 h-full w-full pointer-events-none"></div>
     </div>
   );
 };
