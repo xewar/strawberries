@@ -15,6 +15,7 @@ function PlantsLayout({ children }) {
       </div>
       <PlantsList plants={plants} />
       {children}
+      <div className="z-50 noise fixed bg-opacity-30 top-0 h-full w-full pointer-events-none"></div>
     </div>
   );
 }
