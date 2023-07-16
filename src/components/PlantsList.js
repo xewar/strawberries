@@ -38,7 +38,7 @@ function PlantsList({ plants }) {
             className="z-20 md:w-[75%] lg:w-[45%] md:p-4 md:ml-8 bg-transparent  md:rounded-full "
           >
             <Image
-              src={`/../public/images/plants/${plant.fileExt}.jpg`}
+              src={`/images/plants/${plant.fileExt}.jpg`}
               width={1024}
               height={1024}
               className="md:rounded-full aspect-square object-cover md:w-full md:max-h-full md:hover:shadow-[-20px_0px_0px_5px_#ff0] md:hover:scale-[1.005]"
