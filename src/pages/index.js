@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import PlantsLayout from "./seeds";
 import Link from "next/link";
-import FeaturedPlant from "./seeds/FeaturedPlant.js";
+import FeaturedPlant from "../components/FeaturedPlant.js";
 
 const inter = Inter({ subsets: ["latin"] });
 
