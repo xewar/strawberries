@@ -11,7 +11,7 @@ const About = () => {
         <Image
           className="image object-cover object-right-top md:h-3/4 md:max-w-full shadow-[-20px_20px_0_5px_#fdba74]  "
           alt="butterfly milkweed flowers"
-          src={`/../public/images/plants/butterfly-milkweed.jpg`}
+          src={`/images/plants/butterfly-milkweed.jpg`}
           width={1024}
           height={1024}
         ></Image>
@@ -97,7 +97,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="z-50 noise fixed bg-opacity-30 top-0 h-full w-full pointer-events-none"></div>
     </div>
   );
 };
