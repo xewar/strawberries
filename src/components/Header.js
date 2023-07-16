@@ -48,7 +48,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="header pt-16 px-8 lg:px-16 flex justify-between md:flex-row md:justify-between">
+    <div className="header pt-16 px-8  flex justify-between md:flex-row md:justify-between">
       <div
         id="left"
         onMouseEnter={() => handleMouseEnter("left")}
