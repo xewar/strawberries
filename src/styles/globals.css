@@ -5,7 +5,7 @@
 .noise {
   background: url("/images/noise.svg");
   filter: contrast(700%) brightness(900%);
-  opacity: 40%;
+  opacity: 50%;
   /* background-color: red; */
 }
 .accent {
