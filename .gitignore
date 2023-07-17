@@ -5,3 +5,4 @@ node_modules
 # Optional REPL history
 .next
 .vercel
+.env*.local

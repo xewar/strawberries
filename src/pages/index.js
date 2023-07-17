@@ -1,16 +1,24 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import PlantsLayout from "./seeds";
-import Link from "next/link";
 import FeaturedPlant from "../components/FeaturedPlant.js";
+import prisma from "./../../lib/prisma";
 
-const inter = Inter({ subsets: ["latin"] });
+export async function getStaticProps() {
+  const plants = await prisma.flower?.findMany();
+  console.log(plants); // Check the retrieved data in the console
 
-export default function Home() {
+  return {
+    props: {
+      plants,
+    },
+  };
+}
+
+export default function Home({ plants }) {
   return (
     <main className="flex flex-col  font-neue-haas ">
       <FeaturedPlant />
-      <PlantsLayout />
+      <PlantsLayout plants={plants} />
     </main>
   );
 }
