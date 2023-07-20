@@ -1,12 +1,9 @@
-import { Inter } from "next/font/google";
-import PlantsLayout from "./seeds";
 import FeaturedPlant from "../components/FeaturedPlant.js";
-import prisma from "./../../lib/prisma";
+import SeedsContainer from "@/containers/SeedsContainer.js";
+import prisma from "../../lib/prisma.js";
 
 export async function getStaticProps() {
-  const plants = await prisma.flower?.findMany();
-  console.log(plants); // Check the retrieved data in the console
-
+  const plants = await prisma.flower.findMany();
   return {
     props: {
       plants,
@@ -16,9 +13,9 @@ export async function getStaticProps() {
 
 export default function Home({ plants }) {
   return (
-    <main className="flex flex-col  font-neue-haas ">
+    <main className="flex flex-col font-neue-haas">
       <FeaturedPlant />
-      <PlantsLayout plants={plants} />
+      <SeedsContainer plants={plants} />
     </main>
   );
 }
