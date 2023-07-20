@@ -12,6 +12,7 @@ import Splotch3 from "./Splotches/Splotch3.js";
 const Header = () => {
   //menuOpen displays and hides the menu links in mobile view
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [loginLinksOpen, setLoginLinksOpen] = useState(false);
   const [hoveredButton, setHoveredButton] = useState(null);
 
@@ -48,7 +49,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="header pt-16 px-8  flex justify-between md:flex-row md:justify-between">
+    <div className="header pt-4 md:pt-16 md:px-8  flex justify-between md:flex-row md:justify-between">
       <div
         id="left"
         onMouseEnter={() => handleMouseEnter("left")}
@@ -57,7 +58,7 @@ const Header = () => {
       >
         <Link
           href="/"
-          className="z-20 title absolute font-bold flex flex-col gap-2  text-7xl"
+          className="z-20 pl-2 pt-8 title absolute font-bold flex flex-col gap-2  md:text-7xl text-6xl"
         >
           <div> wtehim</div>
           <div className="subtitle text-2xl pl-4 font-light">
@@ -65,13 +66,13 @@ const Header = () => {
           </div>
         </Link>
         <Splotch2
-          className={`w-full fill-transparent splotch opacity-90 -pt-80 -mt-10 -ml-3 block  ${
+          className={`w-full min-w-[100px] fill-transparent splotch opacity-90 -pt-80 md:-mt-4 md:-ml-3 ml-4 block  ${
             hoveredButton === "left" ? "hovered" : ""
           }`}
         />
       </div>
-      <div className="right flex flex-col justify-center md:justify-end gap-2">
-        <div className="navMenu flex flex-col justify-end items-end ">
+      <div className="right flex flex-col justify-center md:justify-end pt-8 md:pt-0 pr-4">
+        <div className="navMenu flex flex-col justify-end items-end">
           <FiMenu
             className="text-3xl pb-2 md:hidden"
             onClick={() => {
@@ -136,6 +137,23 @@ const Header = () => {
               </div>
             </div>
           )}
+          <div className="search flex flex-col md:flex-row-reverse mt-4 md:mt-0 md:mb-20 md:pt-8 gap-2 md:pr-6 justify-center items-end md:items-center">
+            <FiSearch
+              className="text-3xl md:text-4xl"
+              onClick={() => {
+                setSearchOpen((prevState) => !prevState);
+              }}
+            />
+            {searchOpen && (
+              <input
+                className=" focus:outline-none p-.5 pt-10 md:mt-0 rounded-md border-b-4 rounded-none border-opacity-70 border-yellow-800 hover:border-rose-300 text-2xl p-3 px-3 text-right w-full md:w-[275px] pr-12 placeholder-yellow-800 placeholder-opacity-70 focus:placeholder-white"
+                type="search"
+                name="search"
+                style={{ resize: "horizontal" }}
+                placeholder="Search"
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

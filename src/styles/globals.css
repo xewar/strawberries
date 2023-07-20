@@ -18,6 +18,13 @@
 #left > .hovered {
   fill: #ff0;
 }
+
+::-webkit-search-cancel-button,
+::-webkit-search-decoration {
+  display: none;
+}
+.cleanSearch {
+}
 /* .splotch {
   transition: all 0.2s ease-in-out;
 }
