@@ -6,9 +6,8 @@ import { LanguageContext } from "../contexts/LanguageContext";
 //displays all the plants on the seeds page and home page
 function PlantsList({ plants }) {
   const { language } = useContext(LanguageContext);
-
   return (
-    <div className="plantsContainer flex flex-wrap md:-mt-60 md:mr-16 lg:mr-20 md:pr-12 lg:justify-start md:justify-center ">
+    <div className=" plantsContainer flex flex-wrap -mt-72 md:-mt-60 md:mr-16 lg:mr-20 md:pr-12 lg:justify-start md:justify-center ">
       {plants.map((plant) => {
         //the displayLanguage of individual plant names flips on mouseOver
         //state is kept here because it corresponds to each plant
@@ -32,6 +31,7 @@ function PlantsList({ plants }) {
               query: {
                 id: plant.id,
                 plant: JSON.stringify(plant),
+                slug: plant.fileExt,
               },
             }}
             key={plant.id}
