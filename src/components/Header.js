@@ -9,6 +9,7 @@ import Splotch from "./Splotches/Splotch.js";
 import Splotch2 from "./Splotches/Splotch2.js";
 import Splotch3 from "./Splotches/Splotch3.js";
 import Search from "./Search.js";
+import { useRouter } from "next/router.js";
 
 const Header = () => {
   //menuOpen displays and hides the menu links in mobile view
@@ -16,6 +17,15 @@ const Header = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [loginLinksOpen, setLoginLinksOpen] = useState(false);
   const [hoveredButton, setHoveredButton] = useState(null);
+  const router = useRouter();
+
+  //minimize search bar when navigating between pages
+  useEffect(() => {
+    const nonSearchRoutes = ["/", "/about", "/learn", "/seeds"];
+    if (nonSearchRoutes.includes(router.asPath)) {
+      setSearchOpen(false);
+    }
+  }, [router.query]);
 
   //a way to change the hover color of nav menu items. nb - the :hover state wasn't working properly because of the text in front of the svg
   const handleMouseEnter = (buttonId) => {
