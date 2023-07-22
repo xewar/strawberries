@@ -8,6 +8,7 @@ import Image from "next/image";
 import Splotch from "./Splotches/Splotch.js";
 import Splotch2 from "./Splotches/Splotch2.js";
 import Splotch3 from "./Splotches/Splotch3.js";
+import Search from "./Search.js";
 
 const Header = () => {
   //menuOpen displays and hides the menu links in mobile view
@@ -66,7 +67,7 @@ const Header = () => {
           </div>
         </Link>
         <Splotch2
-          className={`w-full min-w-[100px] fill-transparent splotch opacity-90 -pt-80 md:-mt-4 md:-ml-3 ml-4 block  ${
+          className={`w-3/4 md:w-full min-w-[80px] fill-transparent splotch opacity-90 -pt-80 md:-mt-4 md:-ml-3 ml-4 block  ${
             hoveredButton === "left" ? "hovered" : ""
           }`}
         />
@@ -144,15 +145,7 @@ const Header = () => {
                 setSearchOpen((prevState) => !prevState);
               }}
             />
-            {searchOpen && (
-              <input
-                className=" focus:outline-none p-.5 pt-10 md:mt-0 rounded-md border-b-4 rounded-none border-opacity-70 border-yellow-800 hover:border-rose-300 text-2xl p-3 px-3 text-right w-full md:w-[275px] pr-12 placeholder-yellow-800 placeholder-opacity-70 focus:placeholder-white"
-                type="search"
-                name="search"
-                style={{ resize: "horizontal" }}
-                placeholder="Search"
-              />
-            )}
+            {searchOpen && <Search />}
           </div>
         </div>
       </div>
