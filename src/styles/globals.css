@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+.plantImage {
+  object-fit: fill;
+}
 .noise {
   background: url("/images/noise.svg");
   filter: contrast(700%) brightness(900%);
@@ -18,13 +21,51 @@
 #left > .hovered {
   fill: #ff0;
 }
+.subtitle {
+  font-weight: 600;
+}
 
-::-webkit-search-cancel-button,
+.cartTransition.open {
+  animation: fadeIn 1s, slideIn 0.8s linear;
+}
+.cartTransition.closed {
+  animation: slideOut 0.6s linear;
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(400px);
+    animation-timing-function: ease-out;
+  }
+  60% {
+    transform: translateY(-30px);
+    animation-timing-function: ease-in;
+  }
+  80% {
+    transform: translateY(10px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateY(0px);
+    animation-timing-function: ease-in;
+  }
+}
+*/ ::-webkit-search-cancel-button,
 ::-webkit-search-decoration {
   display: none;
 }
-.cleanSearch {
-}
+
 /* .splotch {
   transition: all 0.2s ease-in-out;
 }

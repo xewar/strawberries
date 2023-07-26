@@ -2,19 +2,19 @@
 import Link from "next/link";
 import { BsCart3 } from "react-icons/bs";
 import { FiSearch, FiMenu, FiHeart } from "react-icons/fi";
-import { LuFlower } from "react-icons/lu";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Splotch from "./Splotches/Splotch.js";
 import Splotch2 from "./Splotches/Splotch2.js";
 import Splotch3 from "./Splotches/Splotch3.js";
 import Search from "./Search.js";
 import { useRouter } from "next/router.js";
+import Cart from "./Cart.js";
 
 const Header = () => {
   //menuOpen displays and hides the menu links in mobile view
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
   const [loginLinksOpen, setLoginLinksOpen] = useState(false);
   const [hoveredButton, setHoveredButton] = useState(null);
   const [bgColor, setBgColor] = useState("bg-transparent");
@@ -26,13 +26,6 @@ const Header = () => {
     if (nonSearchRoutes.includes(router.asPath)) {
       setSearchOpen(false);
     }
-    //   // Optional - background color change for individual seeds pages
-    //  else if (router.asPath.startsWith("/seeds/")) {
-    //   setSearchOpen(false);
-    //   setBgColor("bg-transparent");
-    // } else {
-    //   setBgColor("bg-transparent");
-    // }
   }, [router.query]);
 
   //a way to change the hover color of nav menu items. nb - the :hover state wasn't working properly because of the text in front of the svg
@@ -69,7 +62,7 @@ const Header = () => {
 
   return (
     <div
-      className={`header ${bgColor} z-40  pt-8 md:pt-16  md:px-4 md:mb-20 flex justify-between md:flex-row md:justify-between`}
+      className={`header ${bgColor} z-40  pt-8 md:pt-8   md:px-4 md:mb-20 flex justify-between md:flex-row md:justify-between`}
     >
       <div
         id="left"
@@ -151,10 +144,18 @@ const Header = () => {
             </div>
           )}
         </div>
-        <BsCart3 className="z-40 text-2xl md:text-2xl text-right mt-6 mr-1 md:mr-3" />
-        <div className="search flex flex-col mt-8 md:flex-row-reverse mr-1 md:mt-6 md:mr-3 ">
+        <div className="cartContainer">
+          <BsCart3
+            className="z-40 text-2xl md:text-2xl text-right mt-6 mr-1 md:mr-4"
+            onClick={() => {
+              setCartOpen((prevState) => !prevState);
+            }}
+          />
+          {cartOpen && <Cart setCartOpen={setCartOpen} cartOpen={cartOpen} />}
+        </div>
+        <div className="search flex flex-col mt-8 md:flex-row-reverse mr-1 md:mt-6 md:mr-4 items-end">
           <FiSearch
-            className="z-40 text-2xl md:text-2xl "
+            className="text-2xl md:text-2xl items-end mb-4"
             onClick={() => {
               setSearchOpen((prevState) => !prevState);
             }}
