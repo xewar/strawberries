@@ -61,7 +61,7 @@
     animation-timing-function: ease-in;
   }
 }
-*/ ::-webkit-search-cancel-button,
+::-webkit-search-cancel-button,
 ::-webkit-search-decoration {
   display: none;
 }
