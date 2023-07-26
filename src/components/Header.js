@@ -17,6 +17,7 @@ const Header = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [loginLinksOpen, setLoginLinksOpen] = useState(false);
   const [hoveredButton, setHoveredButton] = useState(null);
+  const [bgColor, setBgColor] = useState("bg-transparent");
   const router = useRouter();
 
   //minimize search bar when navigating between pages
@@ -25,6 +26,13 @@ const Header = () => {
     if (nonSearchRoutes.includes(router.asPath)) {
       setSearchOpen(false);
     }
+    //   // Optional - background color change for individual seeds pages
+    //  else if (router.asPath.startsWith("/seeds/")) {
+    //   setSearchOpen(false);
+    //   setBgColor("bg-transparent");
+    // } else {
+    //   setBgColor("bg-transparent");
+    // }
   }, [router.query]);
 
   //a way to change the hover color of nav menu items. nb - the :hover state wasn't working properly because of the text in front of the svg
@@ -60,30 +68,30 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="header pt-4 md:pt-16 md:px-8  flex justify-between md:flex-row md:justify-between">
+    <div
+      className={`header ${bgColor} z-40  pt-8 md:pt-16  md:px-4 md:mb-20 flex justify-between md:flex-row md:justify-between`}
+    >
       <div
         id="left"
         onMouseEnter={() => handleMouseEnter("left")}
         onMouseLeave={handleMouseLeave}
-        className="left navContainer relative text-center ml-2 md:text-left "
+        className="left navContainer relative text-center ml-2 md:text-left"
       >
         <Link
           href="/"
-          className="z-20 pl-2 pt-8 title absolute font-bold flex flex-col gap-2  md:text-7xl text-6xl"
+          className="z-20 pl-4 mt-6 md:mt-0 md:pl-2 title absolute font-bold flex flex-col gap-2  md:text-7xl text-6xl"
         >
           <div> wtehim</div>
-          <div className="subtitle text-2xl pl-4 font-light">
-            a native seeds store
-          </div>
+          <div className=" text-2xl pl-4 font-light">a native seeds store</div>
         </Link>
         <Splotch2
-          className={`w-3/4 md:w-full min-w-[80px] fill-transparent splotch opacity-90 -pt-80 md:-mt-4 md:-ml-3 ml-4 block  ${
+          className={`w-3/4 md:w-full min-w-[80px] fill-transparent splotch opacity-90 -mt-2 md:-mt-8 md:-ml-3 ml-4 block  ${
             hoveredButton === "left" ? "hovered" : ""
           }`}
         />
       </div>
-      <div className="right flex flex-col justify-center md:justify-end pt-8 md:pt-0 pr-4">
-        <div className="navMenu flex flex-col justify-end items-end">
+      <div className="right flex flex-col justify-end mr-4 md:mr-2 items-end">
+        <div className="navMenu flex flex-col justify-end items-end md:mt-4 md:mt-1">
           <FiMenu
             className="text-3xl pb-2 md:hidden"
             onClick={() => {
@@ -91,7 +99,7 @@ const Header = () => {
             }}
           />
           {menuOpen && (
-            <div className="menu flex md:flex flex-col  font-semibold  uppercase text-right gap-3 text-md">
+            <div className="menu flex mt-28 md:mt-0 sm:flex-col md:flex-row gap-3  md:gap-6 justify-end font-semibold  uppercase text-right text-md">
               <div
                 id="about"
                 className="navContainer splotch relative"
@@ -99,13 +107,13 @@ const Header = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
-                  className="z-20 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-80"
+                  className="z-20 absolute right-11 opacity-80 top-8  "
                   href="/about"
                 >
                   About
                 </Link>
                 <Splotch
-                  className={`fill-pink-200 splotch block opacity-80 w-30 h-16  ${
+                  className={`fill-pink-200 splotch block opacity-80 w-30 h-[4.75rem]  ${
                     hoveredButton === "about" ? "hovered" : ""
                   }`}
                 />
@@ -116,14 +124,11 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter("seeds")}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link
-                  className="z-20 pt-5  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-80"
-                  href="/seeds"
-                >
+                <Link className="z-20  absolute right-10 top-8 " href="/seeds">
                   Seeds
                 </Link>
                 <Splotch2
-                  className={`fill-pink-500 opacity-80 block ${
+                  className={`fill-pink-500  h-full opacity-80 block ${
                     hoveredButton === "seeds" ? "hovered" : ""
                   }`}
                 />{" "}
@@ -135,28 +140,26 @@ const Header = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <Splotch3
-                  className={`fill-rose-300 opacity-80 block ${
+                  className={`fill-rose-300 h-full opacity-80 block ${
                     hoveredButton === "learn" ? "hovered" : ""
                   }`}
                 />
-                <Link
-                  className="pt-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                  href="/learn"
-                >
+                <Link className="absolute right-10 top-8   " href="/learn">
                   Learn
                 </Link>
               </div>
             </div>
           )}
-          <div className="search flex flex-col md:flex-row-reverse mt-4 md:mt-0 md:mb-20 md:pt-8 gap-2 md:pr-6 justify-center items-end md:items-center">
-            <FiSearch
-              className="text-3xl md:text-4xl"
-              onClick={() => {
-                setSearchOpen((prevState) => !prevState);
-              }}
-            />
-            {searchOpen && <Search />}
-          </div>
+        </div>
+        <BsCart3 className="z-40 text-2xl md:text-2xl text-right mt-6 mr-1 md:mr-3" />
+        <div className="search flex flex-col mt-8 md:flex-row-reverse mr-1 md:mt-6 md:mr-3 ">
+          <FiSearch
+            className="z-40 text-2xl md:text-2xl "
+            onClick={() => {
+              setSearchOpen((prevState) => !prevState);
+            }}
+          />
+          {searchOpen && <Search />}
         </div>
       </div>
     </div>
