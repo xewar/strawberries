@@ -62,7 +62,7 @@ const Header = () => {
 
   return (
     <div
-      className={`header ${bgColor} z-40  pt-8 md:pt-8   md:px-4 md:mb-20 flex justify-between md:flex-row md:justify-between`}
+      className={`header ${bgColor} z-40  pt-8 md:pt-8   md:mx-4 md:mb-20 flex justify-between md:flex-row md:justify-between`}
     >
       <div
         id="left"
@@ -150,14 +150,20 @@ const Header = () => {
             </div>
           )}
         </div>
-        <div className="cartContainer">
+        <div className="cartContainer ">
           <BsCart3
             className="z-40 text-2xl md:text-2xl text-right mt-6 mr-1 md:mr-6"
             onClick={() => {
               setCartOpen((prevState) => !prevState);
             }}
           />
-          {cartOpen && <Cart setCartOpen={setCartOpen} cartOpen={cartOpen} />}
+          {cartOpen && (
+            <Cart
+              setCartOpen={setCartOpen}
+              cartOpen={cartOpen}
+              className="m-0 p-0 "
+            />
+          )}
         </div>
         <div className="search flex flex-col mt-8 md:flex-row-reverse mr-1 md:mt-6 md:mr-6 items-end">
           <FiSearch

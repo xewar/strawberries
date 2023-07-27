@@ -20,9 +20,24 @@
   /* margin-left: 0.75rem; */
   padding-top: 0.75rem;
 }
+
 .button,
 .toggle {
-  @apply bg-white bg-opacity-100 hover:bg-rose-400 hover:scale-110 border-solid border-yellow-800 border-2 rounded-full items-center p-4;
+  padding: 1rem;
+  align-items: center;
+  border-radius: 9999px;
+  border-width: 2px;
+  border-color: #92400e;
+  border-style: solid;
+  background-color: #ffffff;
+  --bg-opacity: 1;
+}
+.button:hover,
+.toggle:hover,
+.button:active,
+.toggle:active {
+  transform: scale(1.1);
+  background-color: #fb7185;
 }
 
 .toggleLabel {
