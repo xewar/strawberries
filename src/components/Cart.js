@@ -19,7 +19,7 @@ const Cart = ({ cartOpen, setCartOpen }) => {
     <div
       className={`cartDiv ${cartOpen ? "open" : "closed"} cartTransition ${
         isClosing ? "closed" : ""
-      } flex flex-col justify-between items-end bg-pink-200 -mr-4 -mt-8 md:-mr-6 z-40 w-[100vw] h-[100vh] md:w-[500px] absolute top-0 right-0 p-8`}
+      } flex flex-col justify-between items-end bg-pink-200 -mr-4 -mt-8 mt:mt-0 md:-mr-6 z-40 w-[100vw] h-[100vh] md:w-[500px] absolute top-0 right-0 p-8`}
     >
       <div className="top flex justify-between items-center w-full border-b-[3px] pb-3 border-yellow-800">
         <div className="text-3xl uppercase font-semibold mx-auto">
