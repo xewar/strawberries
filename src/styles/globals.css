@@ -2,21 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@media screen and (max-width: 320px) {
-  #__next {
-    display: flex;
-  }
-}
-#__next {
-  display: flex;
-  flex-direction: column;
-}
 .plantImage {
   object-fit: fill;
 }
 .noise {
   background: url("/images/noise.svg");
-  filter: contrast(700%) brightness(900%);
+  /* filter: contrast(700%) brightness(900%); */
   opacity: 50%;
   /* background-color: red; */
 }
@@ -75,6 +66,9 @@
   display: none;
 }
 
+.splotch {
+  /* width: 8rem; */
+}
 /* .splotch {
   transition: all 0.2s ease-in-out;
 }

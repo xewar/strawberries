@@ -68,11 +68,11 @@ const Header = () => {
         id="left"
         onMouseEnter={() => handleMouseEnter("left")}
         onMouseLeave={handleMouseLeave}
-        className="left navContainer relative text-center ml-2 md:text-left"
+        className="left relative text-center ml-2 md:text-left"
       >
         <Link
           href="/"
-          className="z-20 pl-4 mt-6 md:mt-0 md:pl-2 title absolute font-bold flex flex-col gap-2  md:text-7xl text-6xl"
+          className="z-20 pl-4 mt- md:mt-0 md:pl-2 title absolute font-bold flex flex-col gap-2  md:text-7xl text-6xl"
         >
           <div> wtehim</div>
           <div className=" text-2xl pl-4 font-light">a native seeds store</div>
@@ -83,8 +83,8 @@ const Header = () => {
           }`}
         />
       </div>
-      <div className="right flex flex-col justify-end mr-4 md:mr-2 items-end">
-        <div className="navMenu flex flex-col justify-end items-end md:mt-4 md:mt-1">
+      <div className="right flex flex-col mr-4 md:mr-2 items-end relative">
+        <div className="navMenu flex flex-row-reverse items-start w-full md:mt-4">
           <FiMenu
             className="text-3xl pb-2 md:hidden"
             onClick={() => {
@@ -92,36 +92,39 @@ const Header = () => {
             }}
           />
           {menuOpen && (
-            <div className="menu flex mt-28 md:mt-0 sm:flex-col md:flex-row gap-3  md:gap-6 justify-end font-semibold  uppercase text-right text-md">
+            <div className="expandedMenu max-w-100 md:mt-0 -mb-36 md:mb-0 flex flex-col justify-start items-center  md:gap-2   font-semibold  uppercase text-md">
               <div
                 id="about"
-                className="navContainer splotch relative"
+                className="navContainer relative "
                 onMouseEnter={() => handleMouseEnter("about")}
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
-                  className="z-20 absolute right-11 opacity-80 top-8  "
+                  className="z-20 absolute opacity-80 top-8 left-8 md:left-12 md:top-8"
                   href="/about"
                 >
                   About
                 </Link>
                 <Splotch
-                  className={`fill-pink-200 splotch block opacity-80 w-30 h-[4.75rem]  ${
+                  className={`fill-pink-200  block opacity-80 top-8 w-28 h-[4.75rem]  md:w-40  ${
                     hoveredButton === "about" ? "hovered" : ""
                   }`}
                 />
               </div>
               <div
                 id="seeds"
-                className="navContainer relative"
+                className="navContainer relative "
                 onMouseEnter={() => handleMouseEnter("seeds")}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link className="z-20  absolute right-10 top-8 " href="/seeds">
+                <Link
+                  className="z-20 absolute  opacity-80 top-8 left-8 md:left-14 md:top-8"
+                  href="/seeds"
+                >
                   Seeds
                 </Link>
                 <Splotch2
-                  className={`fill-pink-500  h-full opacity-80 block ${
+                  className={`fill-pink-500 opacity-90 w-28 h-[4.75rem]  md:w-40 ${
                     hoveredButton === "seeds" ? "hovered" : ""
                   }`}
                 />{" "}
@@ -133,11 +136,14 @@ const Header = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <Splotch3
-                  className={`fill-rose-300 h-full opacity-80 block ${
+                  className={`fill-rose-300 opacity-80 top-8 splotch w-28 h-[4.75rem]  md:w-40 ${
                     hoveredButton === "learn" ? "hovered" : ""
                   }`}
                 />
-                <Link className="absolute right-10 top-8   " href="/learn">
+                <Link
+                  className=" absolute  opacity-80 top-8 left-8 md:left-14 md:top-8"
+                  href="/learn"
+                >
                   Learn
                 </Link>
               </div>
@@ -146,14 +152,14 @@ const Header = () => {
         </div>
         <div className="cartContainer">
           <BsCart3
-            className="z-40 text-2xl md:text-2xl text-right mt-6 mr-1 md:mr-4"
+            className="z-40 text-2xl md:text-2xl text-right mt-6 mr-1 md:mr-6"
             onClick={() => {
               setCartOpen((prevState) => !prevState);
             }}
           />
           {cartOpen && <Cart setCartOpen={setCartOpen} cartOpen={cartOpen} />}
         </div>
-        <div className="search flex flex-col mt-8 md:flex-row-reverse mr-1 md:mt-6 md:mr-4 items-end">
+        <div className="search flex flex-col mt-8 md:flex-row-reverse mr-1 md:mt-6 md:mr-6 items-end">
           <FiSearch
             className="text-2xl md:text-2xl items-end mb-4"
             onClick={() => {
