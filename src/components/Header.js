@@ -84,7 +84,7 @@ const Header = () => {
         />
       </div>
       <div className="right flex flex-col mr-4 md:mr-2 items-end relative">
-        <div className="navMenu flex flex-row-reverse items-start w-full md:mt-4">
+        <div className="navMenu flex flex-col items-end w-full md:mt-4">
           <FiMenu
             className="text-3xl pb-2 md:hidden"
             onClick={() => {
@@ -92,7 +92,7 @@ const Header = () => {
             }}
           />
           {menuOpen && (
-            <div className="expandedMenu max-w-100 md:mt-0 -mb-36 md:mb-0 flex flex-col justify-start items-center  md:gap-2   font-semibold  uppercase text-md">
+            <div className="expandedMenu max-w-100 md:mt-0  md:mb-0 flex flex-col gap-2 md:flex-row justify-start items-center  md:gap-2   font-semibold  uppercase text-md">
               <div
                 id="about"
                 className="navContainer relative "
@@ -100,13 +100,13 @@ const Header = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
-                  className="z-20 absolute opacity-80 top-8 left-8 md:left-12 md:top-8"
+                  className="z-20 md:absolute md:opacity-80 top-8 left-8 md:left-12 md:top-8"
                   href="/about"
                 >
                   About
                 </Link>
                 <Splotch
-                  className={`fill-pink-200  block opacity-80 top-8 w-28 h-[4.75rem]  md:w-40  ${
+                  className={`hidden md:block fill-pink-200  block opacity-80 top-8 w-28 h-[4.75rem]  md:w-40  ${
                     hoveredButton === "about" ? "hovered" : ""
                   }`}
                 />
@@ -118,13 +118,13 @@ const Header = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
-                  className="z-20 absolute  opacity-80 top-8 left-8 md:left-14 md:top-8"
+                  className="z-20 md:absolute  md:opacity-80 top-8 left-8 md:left-14 md:top-8"
                   href="/seeds"
                 >
                   Seeds
                 </Link>
                 <Splotch2
-                  className={`fill-pink-500 opacity-90 w-28 h-[4.75rem]  md:w-40 ${
+                  className={`hidden md:block fill-pink-500 opacity-90 w-28 h-[4.75rem]  md:w-40 ${
                     hoveredButton === "seeds" ? "hovered" : ""
                   }`}
                 />{" "}
@@ -136,12 +136,12 @@ const Header = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <Splotch3
-                  className={`fill-rose-300 opacity-80 top-8 splotch w-28 h-[4.75rem]  md:w-40 ${
+                  className={`hidden md:block fill-rose-300 opacity-80 top-8 splotch w-28 h-[4.75rem]  md:w-40 ${
                     hoveredButton === "learn" ? "hovered" : ""
                   }`}
                 />
                 <Link
-                  className=" absolute  opacity-80 top-8 left-8 md:left-14 md:top-8"
+                  className=" md:absolute  md:opacity-80 top-8 left-8 md:left-14 md:top-8"
                   href="/learn"
                 >
                   Learn
