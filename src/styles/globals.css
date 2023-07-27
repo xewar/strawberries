@@ -6,7 +6,6 @@ body,
 html {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* This prevents body scrolling when cart is open */
 }
 
 .plantImage {
