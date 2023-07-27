@@ -21,7 +21,7 @@ const Search = () => {
   return (
     <form onSubmit={onSearch} className="z-40">
       <input
-        className=" focus:outline-none  pr-4 mt-4 md:mt-0  border-b-4 rounded-none border-opacity-70 border-yellow-800 text-2xl text-right w-[225px] placeholder-yellow-800 placeholder-opacity-50 bg-transparent"
+        className=" focus:outline-none  pr-4 mt-4 md:mt-0  border-b-4  border-opacity-70 border-yellow-800 rounded-none shadow-none text-2xl text-right w-[225px] placeholder-yellow-800 placeholder-opacity-50 bg-transparent"
         type="search"
         name="search"
         value={searchQuery}
