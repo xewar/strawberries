@@ -92,7 +92,7 @@ const Header = () => {
             }}
           />
           {menuOpen && (
-            <div className="expandedMenu max-w-100 mt-4 md:mt-0  md:mb-0 flex flex-col gap-4 md:flex-row justify-start items-center  md:gap-2  font-semibold  uppercase text-xl md:text-md">
+            <div className="expandedMenu max-w-100 mt-4 md:mt-0  md:mb-0 flex flex-col gap-4 md:flex-row justify-start items-center  md:gap-2  font-semibold  uppercase text-xl md:text-base">
               <div
                 id="about"
                 className="navContainer relative "
