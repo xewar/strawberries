@@ -78,7 +78,7 @@ const Header = () => {
           <div className=" text-2xl pl-4 font-light">a native seeds store</div>
         </Link>
         <Splotch2
-          className={`w-3/4 md:w-full min-w-[80px] fill-transparent splotch opacity-90 -mt-2 md:-mt-8 md:-ml-3 ml-4 block  ${
+          className={`w-3/4 md:w-full min-w-[80px] fill-transparent splotch opacity-90 -mt-6 md:-mt-8 md:-ml-3 ml-4 block  ${
             hoveredButton === "left" ? "hovered" : ""
           }`}
         />
@@ -92,7 +92,7 @@ const Header = () => {
             }}
           />
           {menuOpen && (
-            <div className="expandedMenu max-w-100 md:mt-0  md:mb-0 flex flex-col gap-2 md:flex-row justify-start items-center  md:gap-2   font-semibold  uppercase text-md">
+            <div className="expandedMenu max-w-100 mt-4 md:mt-0  md:mb-0 flex flex-col gap-4 md:flex-row justify-start items-center  md:gap-2  font-semibold  uppercase text-xl md:text-md">
               <div
                 id="about"
                 className="navContainer relative "
@@ -150,29 +150,31 @@ const Header = () => {
             </div>
           )}
         </div>
-        <div className="cartContainer ">
-          <BsCart3
-            className="z-40 text-2xl md:text-2xl text-right mt-6 mr-1 md:mr-6"
-            onClick={() => {
-              setCartOpen((prevState) => !prevState);
-            }}
-          />
-          {cartOpen && (
-            <Cart
-              setCartOpen={setCartOpen}
-              cartOpen={cartOpen}
-              className="m-0 p-0 "
+        <div className="desktopIconContainer flex md:flex-row-reverse flex-col items-end md:items-start md:justify-center">
+          <div className="cartContainer ">
+            <BsCart3
+              className="z-40 text-2xl md:text-2xl text-right mt-6 mr-1 md:mr-6"
+              onClick={() => {
+                setCartOpen((prevState) => !prevState);
+              }}
             />
-          )}
-        </div>
-        <div className="search flex flex-col mt-8 md:flex-row-reverse mr-1 md:mt-6 md:mr-6 items-end">
-          <FiSearch
-            className="text-2xl md:text-2xl items-end mb-4"
-            onClick={() => {
-              setSearchOpen((prevState) => !prevState);
-            }}
-          />
-          {searchOpen && <Search />}
+            {cartOpen && (
+              <Cart
+                setCartOpen={setCartOpen}
+                cartOpen={cartOpen}
+                className="m-0 p-0 "
+              />
+            )}
+          </div>
+          <div className="search flex flex-col mt-8 md:flex-row-reverse mr-1 md:mt-6 md:mr-6 items-end">
+            <FiSearch
+              className="text-2xl md:text-2xl items-end mb-4"
+              onClick={() => {
+                setSearchOpen((prevState) => !prevState);
+              }}
+            />
+            {searchOpen && <Search />}
+          </div>
         </div>
       </div>
     </div>

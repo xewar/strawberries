@@ -36,7 +36,7 @@ const Cart = ({ cartOpen, setCartOpen }) => {
         </div>
       </div>
       <button
-        className="w-64 text-xl font-medium uppercase h-16 bg-rose-400 hover:from-teal-400 hover:via-rose-400 hover:to-pink-400 hover:bg-gradient-to-br border-[3px] border-yellow-800 rounded-3xl mx-auto"
+        className="w-64 text-xl font-medium uppercase h-16 bg-rose-400 hover:from-teal-400 hover:via-rose-400 hover:to-pink-400 hover:bg-gradient-to-br border-[3px] border-yellow-800 rounded-3xl mx-auto mb-16"
         onClick={(e) => e.preventDefault()}
       >
         Checkout
