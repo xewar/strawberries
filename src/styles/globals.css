@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@media screen and (max-width: 320px) {
+  #__next {
+    display: flex;
+  }
+}
+#__next {
+  display: flex;
+  flex-direction: column;
+}
 .plantImage {
   object-fit: fill;
 }
