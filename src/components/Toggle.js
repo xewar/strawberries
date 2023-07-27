@@ -12,7 +12,7 @@ const Toggle = () => {
 
   return (
     <div
-      className={`z-50 sticky flex flex-col my-24 pt-8 md:my-16 md:-mb-4 mr-9 items-center ${styles.button}`}
+      className={`z-30 sticky flex flex-col my-24 pt-8 md:my-16 md:-mb-4 mr-9 items-center ${styles.button}`}
     >
       <label htmlFor="languageToggle" className={styles.toggleLeft}>
         Lenape
