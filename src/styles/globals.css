@@ -39,8 +39,11 @@ input[type="search"] {
 }
 .subtitle {
   font-weight: 600;
+  text-transform: uppercase;
 }
-
+.plantSection {
+  /* display: flex; */
+}
 .cartTransition.open {
   animation: fadeIn 1s, slideIn 0.8s linear;
 }
