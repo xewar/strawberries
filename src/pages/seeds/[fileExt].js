@@ -2,22 +2,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import PlantData from "@/lib/PlantData";
 import styles from "@/styles/toggle.module.css";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../../redux/cart.slice";
 
-function IndividualPlantInfo() {
-  //temp solution before I move plant data to database
+const IndividualPlantInfo = () => {
   const { query } = useRouter();
-  let fileExt = query.fileExt;
-  const findFlowerByFileExt = (fileExt) => {
-    const flower = PlantData.wildflowers.find(
-      (flower) => flower.fileExt === fileExt
-    );
-    return flower;
-  };
-  const plant = findFlowerByFileExt(fileExt);
+  //plant = null until the data is loaded from the server
+  const plant = query.plant ? JSON.parse(query.plant) : null;
+
+  //sending items to cart
+  const dispatch = useDispatch();
+  const [currentPlantQuantity, setCurrentPlantQuantity] = useState(1);
+
   //change name of plant to English when hovered
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
@@ -38,25 +36,23 @@ function IndividualPlantInfo() {
         </Link>
       </div>
 
-      <div class="pageBody flex flex-col md:flex-row lg:mx-16">
-        <div className="middle w-full md:w-[65vw] md:h-100 md:ml-0 mr-8 md:pt-4">
-          <Image
-            src={`/images/plants/${plant?.fileExt}.jpg`}
-            width={1024}
-            height={1024}
-            className="object-cover w-full h-full"
-            sizes=""
-            alt={`${plant?.lenapeName} flowers.`}
-            href=""
-          />
-        </div>
-        <div className="right flex flex-col gap-6 md:w-1/2 mx-6 md:mr-0   ">
+      <div class="pageBody flex flex-col md:flex-row lg:mx-16  justify-between">
+        <Image
+          src={`/images/plants/${plant?.fileExt}.jpg`}
+          width={1024}
+          height={1024}
+          className="object-cover w-full md:w-2/3 mr-6 md:pt-4"
+          sizes=""
+          alt={`${plant?.lenapeName} flowers.`}
+          href=""
+        />
+        <div className="right flex flex-col gap-6 md:w-1/2  md:mr-0  mx-6 md:mx-2">
           <div
             class="setHover"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <div className="plantName flex justify-between pt-6 pb-2 ">
+            <div className="plantName flex justify-between  pt-6 md:pt-8 pb-2 ">
               <div className="lenape flex flex-col gap-2">
                 <div className="font-semibold text-3xl uppercase ">
                   {isHovered
@@ -87,19 +83,38 @@ function IndividualPlantInfo() {
             <div className="addToBag flex gap-4">
               <div className="left flex flex-col gap-2 justify-end  items-center">
                 <div className="adjustQuantity bg-white flex w-28 text-center font-semibold">
-                  <button className="adjustDown flex-1 border-2 border-yellow-800">
+                  <button
+                    className="adjustDown flex-1 border-2 border-yellow-800"
+                    onClick={() => {
+                      if (currentPlantQuantity > 1) {
+                        setCurrentPlantQuantity(currentPlantQuantity - 1);
+                      }
+                    }}
+                  >
                     -
                   </button>
                   <div className="currentQuantity bold flex-1 border-y-2 border-yellow-800 flex justify-center">
-                    1
+                    {currentPlantQuantity}
                   </div>
-                  <button className="adjustUp flex-1 border-2 border-yellow-800">
+                  <button
+                    className="adjustUp flex-1 border-2 border-yellow-800"
+                    onClick={() =>
+                      setCurrentPlantQuantity(currentPlantQuantity + 1)
+                    }
+                  >
                     +
                   </button>
                 </div>
-                <div class="price font-medium">${plant?.price}</div>
+                <div className="price font-medium">
+                  ${plant?.price * currentPlantQuantity}
+                </div>
               </div>
-              <button className="w-full  p-6 uppercase font-medium text-xl max-w-sm  from-pink-200 via-rose-400 to-pink-300 bg-gradient-to-br hover:from-pink-400 hover:via-[#ff0] hover:bg-gradient-to-lr">
+              <button
+                className="w-full  p-6 uppercase font-medium text-xl max-w-sm  from-pink-200 via-rose-400 to-pink-300 bg-gradient-to-br hover:from-pink-400 hover:via-[#ff0] hover:bg-gradient-to-lr"
+                onClick={() =>
+                  dispatch(addToCart({ plant, quantity: currentPlantQuantity }))
+                }
+              >
                 Add to Bag
               </button>
             </div>
@@ -150,6 +165,6 @@ function IndividualPlantInfo() {
       </div>
     </div>
   );
-}
+};
 
 export default IndividualPlantInfo;

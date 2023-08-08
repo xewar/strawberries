@@ -5,21 +5,29 @@ const cartSlice = createSlice({
   initialState: [],
   reducers: {
     addToCart: (state, action) => {
-      const itemExists = state.find((item) => item.id === action.payload.id);
+      const { plant, quantity } = action.payload;
+
+      // Find the item in the cart
+      const itemExists = state.find((item) => item.id === plant.id);
+
       if (itemExists) {
-        itemExists.quantity++;
+        // Increment the quantity by the provided amount
+        itemExists.quantity += quantity;
       } else {
-        state.push({ ...action.payload, quantity: 1 });
+        // Add the item to the cart with the provided quantity
+        state.push({ ...plant, quantity });
       }
     },
     incrementQuantity: (state, action) => {
       const item = state.find((item) => item.id === action.payload);
-      item.quantity++;
+      if (item) {
+        item.quantity++;
+      }
     },
     decrementQuantity: (state, action) => {
       const item = state.find((item) => item.id === action.payload);
       if (item.quantity === 1) {
-        const index = state.findIndex((item) => item.id === action);
+        const index = state.findIndex((item) => item.id === action.payload);
         state.splice(index, 1);
       } else {
         item.quantity--;
