@@ -14,7 +14,7 @@ export async function getStaticProps() {
 export default function Home({ plants }) {
   return (
     <main className="flex flex-col font-neue-haas">
-      <FeaturedPlant />
+      <FeaturedPlant plants={plants} />
       <SeedsContainer plants={plants} />
     </main>
   );

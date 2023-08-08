@@ -1,12 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const FeaturedPlant = () => {
+const FeaturedPlant = ({ plants }) => {
+  const plant = plants[12];
+
+  console.log("plants are", plants);
   return (
-    <div className="md:pb-24 md:mx-32 -mt-8 rotate flex-1 justify-center md:block hidden">
+    <div className="md:pb-24 md:mx-32 -mt-16 rotate flex-1 justify-center md:block hidden">
       <Link
-        href="/seeds/new-england-aster"
-        className="featuredPlant  pb-6 md:pb-2 "
+        href={{
+          pathname: `/seeds/${plant?.fileExt}`,
+          query: {
+            id: plant.id,
+            plant: JSON.stringify(plant),
+            slug: plant.fileExt,
+          },
+        }}
+        // href={`/seeds/new-england-aster`}
+        className="featuredPlant pb-6 md:pb-2 "
       >
         <Image
           id="mainImage"
