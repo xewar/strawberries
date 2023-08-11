@@ -85,25 +85,15 @@ input[type="search"] {
   display: none;
 }
 
-.splotch {
-  /* width: 8rem; */
-}
-/* .splotch {
-  transition: all 0.2s ease-in-out;
-}
-
-
-.rotate {
+/* .rotate {
   animation: rotation 1200s infinite linear;
 } */
 
-@keyframes rotation {
+/* @keyframes rotation {
   from {
     transform: rotate(359deg);
   }
   to {
     transform: rotate(0deg);
   }
-}
-@media (prefers-color-scheme: dark) {
-}
+} */

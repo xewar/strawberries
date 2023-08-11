@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
+import { GoNorthStar } from "react-icons/go";
+
 const Learn = () => {
   return (
-    <div className="learnPageMain flex flex-col gap-6 pl-16 pr-16">
-      <div className="pageTitle uppercase text-3xl font-extralight">
-        Resources
+    <div className="learnPageMain flex flex-col gap-6 pl-24 pr-16">
+      <div className="flex gap-4 pageTitle uppercase text-3xl font-light">
+        <GoNorthStar /> Coming soon <GoNorthStar />
       </div>
-      <div>
+      {/* <div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -153,7 +155,7 @@ const Learn = () => {
             <Link href="http://naeb.brit.org/uses/species/38/">yarrow.</Link>
           </div>
         </div> */}
-      </div>
+      {/* </div> */}
     </div>
   );
 };

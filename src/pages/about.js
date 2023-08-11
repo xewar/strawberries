@@ -6,7 +6,7 @@ import { GoNorthStar } from "react-icons/go";
 
 const About = () => {
   return (
-    <div className="md:flex gap-8 md:pr-8 pt-16 md:pt-12">
+    <div className="md:flex gap-2 md:pr-8 pt-16 md:pt-12">
       <div className="left pl-16 px-8 md:pr-0 md:max-w-lg lg:max-w-xl">
         <Image
           className="image object-cover object-right-top md:h-3/4 md:max-w-full shadow-[-20px_20px_0_5px_#fdba74]  "
@@ -26,7 +26,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="right  flex flex-1 flex-col px-16 py-12 lg:px-18 lg:max-w-xl md:py-4 md:pr-16 gap-3">
+      <div className="right  flex flex-1 flex-col px-8 py-12 lg:px-18 lg:max-w-xl md:py-4 md:pr-16 gap-3">
         <div className="aboutTitle font-normal opacity-95 text-xl ">
           <span className="italic">wtehim</span> is the word for wild strawberry
           in Lenape
@@ -64,36 +64,6 @@ const About = () => {
               shop
             </Link>
             .
-          </div>
-          <div>
-            My learning goals for this project were to:
-            <div className="flex gap-4 items-center">
-              <GoNorthStar className="text-xs" />
-              Deepen my fluency with React
-            </div>
-            <div className="flex gap-4 items-center">
-              <GoNorthStar className="text-xs" />
-              Build a project with Next.js + Tailwind CSS
-            </div>
-            <div className="flex gap-4 items-center">
-              <GoNorthStar className="text-xs" /> Implement user authentication
-              with Passport.js
-            </div>
-            <div className="flex gap-4 items-center">
-              <GoNorthStar className="text-xs" /> Learn to use Postgres + Prisma
-            </div>
-            <div className="flex gap-4 items-center">
-              <GoNorthStar className="text-xs" /> Design a visually polished
-              fullstack app
-            </div>
-            <div className="flex gap-4 items-center">
-              <GoNorthStar className="text-xs" /> Build user-friendly custom
-              search support
-            </div>
-            <div className="flex gap-4 items-center">
-              <GoNorthStar className="text-xs" /> Continue to work on good UI
-              practices, accessibility, and responsive web design.
-            </div>
           </div>
         </div>
       </div>

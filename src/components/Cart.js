@@ -69,17 +69,17 @@ const Cart = ({ cartOpen, setCartOpen }) => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="self-stretch">
         {cart.length === 0 ? (
-          <div className="text-2xl my-20 self-center font-medium">
+          <div className="text-2xl my-20 self-center text-center   font-medium">
             Your bag is currently empty.
           </div>
         ) : (
           <div className="cartContainer flex flex-col gap-8 w-full py-6 justify-start items-start">
             {cart.map((plant) => (
               <div className="cartItem flex  flex-col md:flex-row w-full border-y-2 p-4 border-yellow-800 bg-rose-300 justify-between gap-6 pr-4">
-                <div class="cartLeftSide flex flex-col md:flex-row gap-4">
-                  <div class="cartImageContainer w-full md:w-44 md:h-44 md:aspect-square object-cover pb-2">
+                <div className="cartLeftSide flex flex-col md:flex-row gap-4">
+                  <div className="cartImageContainer w-full md:w-44 md:h-44 md:aspect-square object-cover pb-2">
                     <Image
                       src={`/images/plants/${plant.fileExt}.jpg`}
                       width={1024}
@@ -117,16 +117,18 @@ const Cart = ({ cartOpen, setCartOpen }) => {
                 </div>
                 <div className="itemPrice flex justify-between pl-10 pr-8 md:pl-0 md:pr-0 md:flex-col md:justify-center items-end gap-[1rem]">
                   <FiTrash onClick={() => dispatch(removeFromCart(plant.id))} />
-                  <div>${plant.quantity * plant.price}</div>
+                  <div>${(plant.quantity * plant.price).toFixed(2)}</div>
                 </div>
               </div>
             ))}
-            <div>Grand Total</div>
-            <div>${getTotalPrice()}</div>
+            <div className="grandTotal flex border-y-2 border-yellow-800 py-3 px-8 mt-6 text-lg bg-rose-200 font-medium gap-8 justify-end self-end self-stretch">
+              <div className="uppercase">Grand Total</div>
+              <div>${getTotalPrice().toFixed(2)}</div>
+            </div>
           </div>
         )}
       </div>
-      <div class="cartFooter sticky self-center">
+      <div className="cartFooter sticky self-center">
         <button
           className="w-64 text-xl font-medium uppercase h-16 bg-rose-400 hover:from-teal-400 hover:via-rose-400 hover:to-pink-400 hover:bg-gradient-to-br border-[3px] border-yellow-800 rounded-3xl mx-auto mb-16"
           onClick={(e) => e.preventDefault()}

@@ -106,7 +106,7 @@ const IndividualPlantInfo = () => {
                   </button>
                 </div>
                 <div className="price font-medium">
-                  ${plant?.price * currentPlantQuantity}
+                  ${(plant?.price * currentPlantQuantity).toFixed(2)}
                 </div>
               </div>
               <button
